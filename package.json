@@ -1,0 +1,22 @@
+{
+  "name": "the-27-society",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "format": "prettier --write src scripts tests README.md",
+    "check": "prettier --check src scripts tests README.md",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "postcss": "8.5.28",
+    "prettier": "3.9.6"
+  },
+  "packageManager": "pnpm@11.19.0"
+}

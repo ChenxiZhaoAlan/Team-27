@@ -1,0 +1,237 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 50px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  padding: 12px 23px;
+  font-size: 14px;
+  transition:
+    background 0.22s,
+    color 0.22s,
+    transform 0.22s;
+  position: relative;
+}
+.button.dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+.button:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+.button:active {
+  transform: scale(0.97);
+}
+.button span {
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.button:hover span {
+  transform: translate(3px, -3px);
+}
+.button.small {
+  min-height: 42px;
+  padding: 9px 17px;
+}
+.eyebrow {
+  font: 12px/1.5 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+}
+.red {
+  color: var(--red);
+}
+.text-link {
+  font-size: 14px;
+  display: inline-flex;
+  gap: 22px;
+  align-items: center;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+  min-height: 40px;
+}
+.text-link:hover {
+  color: var(--red);
+}
+.suit {
+  font:
+    45px/1 Georgia,
+    serif;
+  display: inline-block;
+}
+.event-row {
+  display: grid;
+  grid-template-columns: 100px 28% 1fr 65px;
+  min-height: 200px;
+  border: 1px solid var(--line);
+  align-items: stretch;
+  position: relative;
+  transition: background 0.3s;
+}
+.event-row:hover {
+  background: #eae4d8;
+}
+.date-block {
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.date-block span {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+.date-block strong {
+  font: 56px/1 var(--serif);
+}
+.event-image {
+  overflow: hidden;
+}
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: transform 0.8s var(--ease);
+}
+.event-row:hover img {
+  transform: scale(1.06);
+}
+.event-info {
+  padding: 30px;
+  min-width: 0;
+}
+.event-info h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.event-info p {
+  font-size: 14px;
+  margin-top: 13px;
+  max-width: 47ch;
+}
+.metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.row-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.text-button {
+  border: 0;
+  background: none;
+  padding: 8px 0;
+  font-size: 12px;
+}
+.text-button:hover {
+  color: var(--red);
+}
+.page-curtain {
+  position: fixed;
+  z-index: 95;
+  inset: 0;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(101%);
+  pointer-events: none;
+  overflow: hidden;
+}
+.page-curtain span {
+  font: 500 60vh/0.9 var(--serif);
+  letter-spacing: -0.1em;
+}
+.page-curtain i {
+  position: absolute;
+  right: 12%;
+  color: var(--red);
+  font: 100px Georgia;
+}
+.note {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 25px;
+}
+dialog {
+  border: 0;
+  background: var(--paper);
+  padding: 55px;
+  max-width: 560px;
+  width: calc(100% - 35px);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: #0009;
+  backdrop-filter: blur(4px);
+}
+dialog h2 {
+  font-size: 50px;
+  margin: 20px 0;
+}
+dialog p {
+  margin: 20px 0;
+}
+.close-dialog {
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  border: 0;
+  background: none;
+  font-size: 32px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.dialog-form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 14px;
+}
+.dialog-form select {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  border: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.toast {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 13px 25px;
+  z-index: 99;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  max-width: 90%;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition: all 0.2s;
+}
+.image-reveal {
+  overflow: hidden;
+}
+.image-reveal img {
+  will-change: transform;
+  min-height: 100%;
+}

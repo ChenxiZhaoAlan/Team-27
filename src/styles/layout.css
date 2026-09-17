@@ -1,0 +1,151 @@
+.skip {
+  position: fixed;
+  left: 15px;
+  top: -80px;
+  z-index: 100;
+  background: white;
+  padding: 16px;
+}
+.skip:focus {
+  top: 15px;
+}
+.progress {
+  position: fixed;
+  height: 3px;
+  background: var(--red);
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 80;
+  top: 0;
+  pointer-events: none;
+}
+.header {
+  height: 100px;
+  padding: 0 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(243, 239, 229, 0.96);
+  border-bottom: 1px solid rgba(201, 195, 184, 0.35);
+  backdrop-filter: blur(12px);
+}
+.wordmark {
+  font: bold 30px/0.9 var(--serif);
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+.wordmark span {
+  padding-left: 5px;
+}
+.wordmark small {
+  display: block;
+  font: 9px/2.6 var(--sans);
+  letter-spacing: 0.27em;
+}
+.header nav {
+  display: flex;
+  gap: 30px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.footer nav {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+}
+.header nav a {
+  position: relative;
+  padding: 10px 0;
+}
+.header nav a:after {
+  content: '';
+  height: 1px;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s var(--ease);
+}
+.header nav a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header nav a[aria-current='page']:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.soundless {
+  border: 0;
+  background: none;
+  min-width: 38px;
+  min-height: 44px;
+  font-size: 18px;
+}
+.menu-toggle {
+  border: 0;
+  background: none;
+  min-width: 38px;
+  min-height: 44px;
+  font-size: 18px;
+  display: none;
+}
+.section {
+  padding: 85px 6%;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+.section-tight {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.footer {
+  padding: 42px 6% 20px;
+  border-top: 1px solid var(--line);
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.footer-top p {
+  font-size: 12px;
+}
+.footer-bottom {
+  margin-top: 35px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.header .wordmark small {
+  font-size: 10px;
+}
+.section-heading .eyebrow {
+  font-size: 12px;
+}
+.section > * {
+  min-width: 0;
+}
