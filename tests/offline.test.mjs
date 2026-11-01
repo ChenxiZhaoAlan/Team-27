@@ -19,7 +19,10 @@ test('large binary data has bounded lines and exact reconstruction', () => {
 test('offline assets reject remote URLs and directory escapes', () => {
   for (const name of ['../secret.txt', 'https://example.com/font.woff2', '//example.com/a'])
     assert.throws(() => inside('/project/dist', name));
-  assert.equal(inside('/project/dist', 'assets/x.png'), '/project/dist/assets/x.png');
+  assert.equal(
+    inside('/project/dist', 'assets/x.png'),
+    path.resolve('/project/dist', 'assets/x.png'),
+  );
 });
 test('font embedding preserves bytes and fails on a missing file', async () => {
   const folder = await fs.mkdtemp(path.join(os.tmpdir(), 'team27-test-'));
